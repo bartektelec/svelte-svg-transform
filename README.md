@@ -1,58 +1,96 @@
-# create-svelte
+# svelte-svg-transform
 
-Everything you need to build a Svelte library, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+This is a tiny library that makes it easier for you to add SVGs and tranform them in your project.
+You won't need to rename your `.svg` files to `.svelte` and add props to them.
 
-Read more about creating a library [in the docs](https://kit.svelte.dev/docs/packaging).
+## Quick Start
 
-## Creating a project
+- Install
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```sh
+npm install svelte-svg-transform
 ```
 
-## Developing
+- Import in your component
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```ts
+import SvgIcon from 'svelte-svg-transform';
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+- Import your Icon's raw markup
 
-## Building
-
-To build your library:
-
-```bash
-npm run package
+```ts
+import MyIcon from '../path/to/icon.svg?raw';
 ```
 
-To create a production version of your showcase app:
+- Pass the icon to the component and transform it using props
 
-```bash
-npm run build
+```tsx
+<span class="text-red-500">
+	<SvgIcon svg={MyIcon} width={32} strokeWidth={3} strokeCurrentColor />
+</span>
+
+// outputs a 32px x 32px svg
+// with red stroke of width 3
 ```
 
-You can preview the production build with `npm run preview`.
+# Usage
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+The component exposes some props that make it easier to manipulate SVG type files.
+Make sure to pass your SVG's **raw** markup to the component like so:
 
-## Publishing
+```ts
+import SvgIcon from 'svelte-svg-transform';
+import MyIcon from '../path/to/icon.svg?raw';
 
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```bash
-npm publish
+<SvgIcon svg={MyIcon} />;
 ```
+
+From there you can use these props on the component:
+
+#### svg
+
+`svg markup - (required)`
+
+Accepts only raw svg markup that you want to transform.
+
+#### width, height
+
+`number - default: 20 (optional)`
+
+Adding width will resize your icon to desired size, you can also pass a height, but if you don't it will be set to the same as width.
+
+#### fillCurrentColor, strokeCurrentColor
+
+`boolean - default: false (optional)`
+
+You can force your svg icons to use currentColor instead of their hard-coded color values.
+
+- `fillCurrentColor`
+  will override any hard-coded fill colors _except none_ to `"currentColor"`
+- `strokeCurrentColor`
+  will override any hard-coded stroke colors _except none_ to `"currentColor"`
+
+#### fillOpacity
+
+`number 0-1 (optional)`
+
+You can change your SVG's internal fill-opacity properties (except none) to any value you want.
+
+#### strokeWidth
+
+`number (optional)`
+
+You can change your SVG's internal stroke-width properties (except none) to any value you want.
+
+#### strokeLineCap
+
+`string (optional)`
+
+You can change your SVG's internal stroke-line-cap properties (except none) to any value you want.
+
+#### strokeOpacity
+
+`number 0-1 (optional)`
+
+You can change your SVG's internal stroke-opacity properties (except none) to any value you want.

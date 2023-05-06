@@ -1,6 +1,6 @@
 {
-	"name": "svelte-svg",
-	"version": "0.0.1",
+	"name": "svelte-svg-transform",
+	"version": "0.9.1",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
