@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resize, forceCurrentColor, setProp } from './utils.ts';
+	import { resize, forceCurrentColor, setProp } from './utils.js';
 
 	export let svg: string;
 	export let width = 20;
@@ -26,8 +26,6 @@
 
 		markup = output;
 	}
-
-	$: console.log(markup);
 </script>
 
 {#if markup}

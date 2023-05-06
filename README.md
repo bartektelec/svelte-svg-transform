@@ -1,9 +1,16 @@
-# svelte-svg-transform
+<div align="center">
 
-This is a tiny library that makes it easier for you to add SVGs and tranform them in your project.
-You won't need to rename your `.svg` files to `.svelte` and add props to them.
+# 🖍️svelte-svg-transform
 
-## Quick Start
+A tiny library that makes it easier for you to add SVGs and tranform them in your svelte project.
+You won't need to rename your `.svg` files to `.svelte` and manually edit them.
+
+[![release version](https://img.shields.io/npm/v/svelte-svg-transform)](https://www.npmjs.com/package/svelte-svg-transform) [![weekly download count](https://img.shields.io/npm/dm/svelte-svg-transform)](https://npmcharts.com/compare/svelte-svg-transform?interval=30&minimal=true) ![primary language procentage](https://img.shields.io/github/languages/top/bartektelec/svelte-svg-transform) ![workflow build status](https://img.shields.io/github/workflow/status/bartektelec/svelte-svg-transform/Publish) ![last commit badge](https://img.shields.io/github/last-commit/bartektelec/svelte-svg-transform) [![licence badge](https://img.shields.io/npm/l/svelte-svg-transform)](https://github.com/bartektelec/svelte-svg-transform/blob/main/LICENSE)
+
+</div>
+<hr />
+
+## Setup
 
 - Install
 
@@ -34,12 +41,12 @@ import MyIcon from '../path/to/icon.svg?raw';
 // with red stroke of width 3
 ```
 
-# Usage
+## Configuration
 
 The component exposes some props that make it easier to manipulate SVG type files.
 Make sure to pass your SVG's **raw** markup to the component like so:
 
-```ts
+```tsx
 import SvgIcon from 'svelte-svg-transform';
 import MyIcon from '../path/to/icon.svg?raw';
 
@@ -94,3 +101,7 @@ You can change your SVG's internal stroke-line-cap properties (except none) to a
 `number 0-1 (optional)`
 
 You can change your SVG's internal stroke-opacity properties (except none) to any value you want.
+
+## Licence
+
+[MIT](https://opensource.org/licenses/MIT)
