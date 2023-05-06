@@ -10,38 +10,43 @@ You won't need to rename your `.svg` files to `.svelte` and manually edit them.
 </div>
 <hr />
 
-## Setup
+## Requirements
 
-- Install
+```
+"vite": "^4.3.0",
+"svelte": "^3.54.0",
+```
+
+## Install
 
 ```sh
 npm install svelte-svg-transform
 ```
 
-- Import in your component
+## Usage
 
-```ts
-import SvgIcon from 'svelte-svg-transform';
-```
-
+- Import in your component and pass it your SVG
 - Import your Icon's raw markup
-
-```ts
-import MyIcon from '../path/to/icon.svg?raw';
-```
-
 - Pass the icon to the component and transform it using props
 
 ```tsx
-<span class="text-red-500">
-	<SvgIcon svg={MyIcon} width={32} strokeWidth={3} strokeCurrentColor />
-</span>
+// important! include the ?raw at the end of your SVG import
+import MyIcon from '../path/to/icon.svg?raw';
+import SvgTransform from 'svelte-svg-transform';
 
-// outputs a 32px x 32px svg
-// with red stroke of width 3
+<span class="text-red-500">
+	<SvgTrasnform
+		svg={MyIcon}
+		width={32}
+		strokeWidth={3}
+		strokeCurrentColor
+	/>
+</span>;
+// => outputs a 32px x 32px INLINE svg
+// => with 3px thick stroke of same color as parent's text
 ```
 
-## Configuration
+## Props
 
 The component exposes some props that make it easier to manipulate SVG type files.
 Make sure to pass your SVG's **raw** markup to the component like so:
@@ -55,52 +60,70 @@ import MyIcon from '../path/to/icon.svg?raw';
 
 From there you can use these props on the component:
 
-#### svg
+### svg
 
-`svg markup - (required)`
+Type: `string (svg markup)`
+Required
 
 Accepts only raw svg markup that you want to transform.
 
-#### width, height
+### width
 
-`number - default: 20 (optional)`
+Type: `number`
+Default: 20
 
-Adding width will resize your icon to desired size, you can also pass a height, but if you don't it will be set to the same as width.
+Sets svg's width to desired pixels.
 
-#### fillCurrentColor, strokeCurrentColor
+### height
 
-`boolean - default: false (optional)`
+Type: `number`
+Default: Same as width
 
-You can force your svg icons to use currentColor instead of their hard-coded color values.
+Sets svg's height to desired pixels, if not passed will use the same as width.
 
-- `fillCurrentColor`
-  will override any hard-coded fill colors _except none_ to `"currentColor"`
-- `strokeCurrentColor`
-  will override any hard-coded stroke colors _except none_ to `"currentColor"`
+### fillCurrentColor
+
+Type: `boolean`
+Default: false
+
+Overrid any hard-coded fill colors _except none_ to `"currentColor"`
+
+### strokeCurrentColor
+
+Type: `boolean`
+Default: false
+
+Override any hard-coded stroke colors _except none_ to `"currentColor"`
 
 #### fillOpacity
 
-`number 0-1 (optional)`
+Type: `number`
+Range: 0-1
+Optional
 
-You can change your SVG's internal fill-opacity properties (except none) to any value you want.
+Change svg's internal fill-opacity properties (except none) to any value you want.
 
 #### strokeWidth
 
-`number (optional)`
+Type: `number`
+Optional
 
-You can change your SVG's internal stroke-width properties (except none) to any value you want.
+Change svg's internal stroke-width properties (except none) to any value you want.
 
 #### strokeLineCap
 
-`string (optional)`
+Type: `string`
+Optional
 
-You can change your SVG's internal stroke-line-cap properties (except none) to any value you want.
+Change svg's internal stroke-line-cap properties (except none) to any value you want.
 
 #### strokeOpacity
 
-`number 0-1 (optional)`
+Type: `number`
+Range: 0-1
+Optional
 
-You can change your SVG's internal stroke-opacity properties (except none) to any value you want.
+Change svg's internal stroke-opacity properties (except none) to any value you want.
 
 ## Licence
 
