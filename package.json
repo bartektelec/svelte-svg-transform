@@ -1,6 +1,15 @@
 {
 	"name": "svelte-svg-transform",
-	"version": "0.9.3",
+	"version": "0.9.5",
+	"keywords": [
+		"svg",
+		"svelte",
+		"transform",
+		"customize"
+	],
+	"homepage": "https://github.com/bartektelec/svelte-svg-transform",
+	"license": "MIT",
+	"author": "Bartek Telec <bartektelec@gmail.com> (https://btelec.no/)",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
