@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { resize, forceCurrentColor, setProp } from './utils.js';
+	import { resize, forceCurrentColor, setProp } from './utils';
 
 	export let svg: string;
 	export let width = 20;
@@ -17,12 +17,34 @@
 	$: {
 		let output = svg;
 		if (width) output = resize(output, width, boundHeight);
-		if (fillCurrentColor) output = forceCurrentColor(output, 'fill');
-		if (strokeCurrentColor) output = forceCurrentColor(output, 'stroke');
-		if (strokeWidth) output = setProp(output, 'stroke-width', String(strokeWidth));
-		if (strokeLineCap) output = setProp(output, 'stroke-linecap', String(strokeLineCap));
-		if (strokeOpacity) output = setProp(output, 'stroke-opacity', String(strokeOpacity));
-		if (fillOpacity) output = setProp(output, 'fill-opacity', String(fillOpacity));
+		if (fillCurrentColor)
+			output = forceCurrentColor(output, 'fill');
+		if (strokeCurrentColor)
+			output = forceCurrentColor(output, 'stroke');
+		if (strokeWidth)
+			output = setProp(
+				output,
+				'stroke-width',
+				String(strokeWidth)
+			);
+		if (strokeLineCap)
+			output = setProp(
+				output,
+				'stroke-linecap',
+				String(strokeLineCap)
+			);
+		if (strokeOpacity)
+			output = setProp(
+				output,
+				'stroke-opacity',
+				String(strokeOpacity)
+			);
+		if (fillOpacity)
+			output = setProp(
+				output,
+				'fill-opacity',
+				String(fillOpacity)
+			);
 
 		markup = output;
 	}
