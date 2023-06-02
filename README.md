@@ -6,6 +6,7 @@
 
 A tiny library that makes it easier for you to add SVGs and tranform them in your svelte project.
 You won't need to rename your `.svg` files to `.svelte` and manually edit them.
+Independent from DOMParser, so it works just fine during server-side rendering.
 
 [![release version](https://img.shields.io/npm/v/svelte-svg-transform)](https://www.npmjs.com/package/svelte-svg-transform) [![weekly download count](https://img.shields.io/npm/dm/svelte-svg-transform)](https://npmcharts.com/compare/svelte-svg-transform?interval=30&minimal=true) ![primary language procentage](https://img.shields.io/github/languages/top/bartektelec/svelte-svg-transform) ![workflow build status](https://img.shields.io/github/actions/workflow/status/bartektelec/svelte-svg-transform/npm-publish.yml) ![last commit badge](https://img.shields.io/github/last-commit/bartektelec/svelte-svg-transform) [![licence badge](https://img.shields.io/npm/l/svelte-svg-transform)](https://github.com/bartektelec/svelte-svg-transform/blob/main/LICENSE)
 
