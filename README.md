@@ -34,10 +34,11 @@ npm install svelte-svg-transform
 ```tsx
 // important! include the ?raw at the end of your SVG import
 import MyIcon from '../path/to/icon.svg?raw';
+// component is default exported so you can call it whatever you want!
 import SvgTransform from 'svelte-svg-transform';
 
 <span class="text-red-500">
-	<SvgTrasnform
+	<SvgTransform
 		svg={MyIcon}
 		width={32}
 		strokeWidth={3}
