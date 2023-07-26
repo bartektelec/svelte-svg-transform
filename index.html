@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="./favicon.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="content-security-policy" content="">
+		<link href="./_app/immutable/assets/2.9f9af7d3.css" rel="stylesheet">
+		<link rel="modulepreload" href="./_app/immutable/entry/start.30514d66.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/index.b2b34021.js">
+		<link rel="modulepreload" href="./_app/immutable/chunks/singletons.3b208728.js">
+		<link rel="modulepreload" href="./_app/immutable/entry/app.d9a607f1.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/0.ddd04cb3.js">
+		<link rel="modulepreload" href="./_app/immutable/nodes/2.1f8ad202.js">
+		<style>
+			body {
+				font-family: sans-serif;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+
+
+<h1>Svelte Svg Transform Playground</h1>
+<main class="svelte-qw3i9h"><div class="controls svelte-qw3i9h"><label class="svelte-qw3i9h">width 64
+			<input type="range" min="8" max="64" value="64"></label>
+		<label class="svelte-qw3i9h">fill
+			<select><option>Default</option><option value="currentColor">currentColor</option><option value="blue">blue</option><option value="red">red</option></select></label>
+		<label class="svelte-qw3i9h">stroke
+			<select><option>Default</option><option value="currentColor">currentColor</option><option value="blue">blue</option><option value="red">red</option></select></label>
+
+		<label class="svelte-qw3i9h">strokeWidth 2
+			<input type="range" min="0.5" step="0.25" max="15" value="2"></label>
+
+		<label class="svelte-qw3i9h">strokeOpacity 1
+			<input type="range" min="0.1" step="0.1" max="1" value="1"></label>
+		<label class="svelte-qw3i9h">fillOpacity 1
+			<input type="range" min="0.1" step="0.1" max="1" value="1"></label>
+		<label class="svelte-qw3i9h">strokeLineCap round
+			<select><option value="butt">butt</option><option value="round">round</option><option value="square">square</option></select></label>
+
+		<label class="svelte-qw3i9h">Container Text Color
+			<input type="color" value="#00FF00"></label></div>
+	<div class="s svelte-qw3i9h"><div><h2>Stroke Icon</h2>
+			<div style="color: #00FF00" class="output svelte-qw3i9h">
+	<!-- HTML_TAG_START --><svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M17 7L7 17M7 7L17 17" stroke="#232323" stroke-width="2" stroke-linecap="round" stroke-opacity="1" stroke-linejoin="round"/>
+</svg>
+<!-- HTML_TAG_END --></div></div>
+
+		<div><h2>Fill Icon</h2>
+			<div style="color: #00FF00" class="output svelte-qw3i9h">
+	<!-- HTML_TAG_START --><svg
+	fill="#232323"
+	fill-opacity="1"
+	width="64"
+	height="64"
+	viewBox="0 0 20 20"
+	xmlns="http://www.w3.org/2000/svg"
+>
+	<path
+		clip-rule="evenodd"
+		d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+		fill-rule="evenodd"
+	/></svg
+><!-- HTML_TAG_END --></div></div></div>
+</main>
+
+
+			
+			<script>
+				{
+					__sveltekit_1idrsj5 = {
+						base: new URL(".", location).pathname.slice(0, -1),
+						env: {}
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("./_app/immutable/entry/start.30514d66.js"),
+						import("./_app/immutable/entry/app.d9a607f1.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 2],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+	</body>
+</html>
