@@ -43,7 +43,7 @@ import SvgTransform from 'svelte-svg-transform';
 		svg={MyIcon}
 		width={32}
 		strokeWidth={3}
-		strokeCurrentColor
+		stroke="currentColor"
 	/>
 </span>;
 // => outputs a 32px x 32px INLINE svg
@@ -85,19 +85,17 @@ Default: Same as width
 
 Sets svg's height to desired pixels, if not passed will use the same as width.
 
-### fillCurrentColor
+### fill
 
-Type: `boolean`
-Default: false
+Type: `string`
 
-Overrid any hard-coded fill colors _except none_ to `"currentColor"`
+Override any hard-coded fill colors _except none_
 
-### strokeCurrentColor
+### stroke
 
-Type: `boolean`
-Default: false
+Type: `string`
 
-Override any hard-coded stroke colors _except none_ to `"currentColor"`
+Override any hard-coded stroke colors _except none_
 
 #### fillOpacity
 

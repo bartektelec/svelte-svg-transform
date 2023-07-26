@@ -5,9 +5,9 @@
 
 	let options = {
 		width: 64,
-		fillCurrentColor: false,
+		fill: undefined,
 		fillOpacity: 1,
-		strokeCurrentColor: false,
+		stroke: undefined,
 		strokeOpacity: 1,
 		strokeWidth: 2,
 		strokeLineCap: 'round'
@@ -21,29 +21,62 @@
 	<div class="controls">
 		<label>
 			width {options.width}
-			<input type="range" min="8" max="64" bind:value={options.width} />
+			<input
+				type="range"
+				min="8"
+				max="64"
+				bind:value={options.width}
+			/>
 		</label>
 		<label>
-			fillCurrentColor
-			<input type="checkbox" bind:checked={options.fillCurrentColor} />
+			fill
+			<select bind:value={options.fill}>
+				<option value={undefined}>Default</option>
+				<option value="currentColor">currentColor</option>
+				<option value="blue">blue</option>
+				<option value="red">red</option>
+			</select>
 		</label>
 		<label>
-			strokeCurrentColor
-			<input type="checkbox" bind:checked={options.strokeCurrentColor} />
+			stroke
+			<select bind:value={options.stroke}>
+				<option value={undefined}>Default</option>
+				<option value="currentColor">currentColor</option>
+				<option value="blue">blue</option>
+				<option value="red">red</option>
+			</select>
 		</label>
 
 		<label>
 			strokeWidth {options.strokeWidth}
-			<input type="range" min="0.5" step="0.25" max="15" bind:value={options.strokeWidth} />
+			<input
+				type="range"
+				min="0.5"
+				step="0.25"
+				max="15"
+				bind:value={options.strokeWidth}
+			/>
 		</label>
 
 		<label>
 			strokeOpacity {options.strokeOpacity}
-			<input type="range" min="0.1" step="0.1" max="1" bind:value={options.strokeOpacity} />
+			<input
+				type="range"
+				min="0.1"
+				step="0.1"
+				max="1"
+				bind:value={options.strokeOpacity}
+			/>
 		</label>
 		<label>
 			fillOpacity {options.fillOpacity}
-			<input type="range" min="0.1" step="0.1" max="1" bind:value={options.fillOpacity} />
+			<input
+				type="range"
+				min="0.1"
+				step="0.1"
+				max="1"
+				bind:value={options.fillOpacity}
+			/>
 		</label>
 		<label>
 			strokeLineCap {options.strokeLineCap}

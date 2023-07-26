@@ -1,12 +1,12 @@
 <script lang="ts">
-	import { resize, forceCurrentColor, setProp } from './utils';
+	import { resize, setProp } from './utils';
 
 	export let svg: string;
 	export let width = 20;
 	export let height: number | undefined = undefined;
-	export let fillCurrentColor = false;
+	export let fill: string | undefined = undefined;
 	export let fillOpacity: number | undefined = undefined;
-	export let strokeCurrentColor = false;
+	export let stroke: string | undefined = undefined;
 	export let strokeWidth: number | undefined = undefined;
 	export let strokeLineCap: string | undefined = undefined;
 	export let strokeOpacity: number | undefined = undefined;
@@ -17,10 +17,8 @@
 	$: {
 		let output = svg;
 		if (width) output = resize(output, width, boundHeight);
-		if (fillCurrentColor)
-			output = forceCurrentColor(output, 'fill');
-		if (strokeCurrentColor)
-			output = forceCurrentColor(output, 'stroke');
+		if (fill) output = setProp(output, 'fill', fill);
+		if (stroke) output = setProp(output, 'stroke', stroke);
 		if (strokeWidth)
 			output = setProp(
 				output,
