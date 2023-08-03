@@ -13,13 +13,6 @@ Independent from DOMParser, so it works just fine during server-side rendering.
 </div>
 <hr />
 
-## Requirements
-
-```
-"vite": "^4.3.0",
-"svelte": "^3.54.0",
-```
-
 ## Install
 
 ```sh
